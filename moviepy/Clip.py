@@ -552,7 +552,7 @@ class Clip:
         """
         logger = proglog.default_bar_logger(logger)
         for frame_index in logger.iter_bar(
-            frame_index=np.arange(0, int(self.duration * fps))
+            frame_index=np.arange(0, int(self.duration * fps + 1e-6))
         ):
             # int is used to ensure that floating point errors are rounded
             # down to the nearest integer
